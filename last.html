@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--bootstap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <!--CSS-->
+  <link rel="stylesheet" href="./stylelast.css">
+
+  <!--fontawesome-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--favicon-->
+
+  <link rel="icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABlVBMVEX///8AAAB9e3n/tp9ywun8XT3wwCBLpcjF5f745bD/y8PppR//YD+AfnyzTzP/uaL/z8h4dnRxUUf8WDZ1x+/2xSH/vaXy8vL5xyG4UTS8vLz457br6+vd3d2SkpL8WjhNTU0NDQ3zWjvK5/+a0vPAwMDT09OamppRHhTwqiD8VDBAPz6pqan1r5lkJRimPShra2sqKiqbbmCXOCXCinjNTDL34J/8blOIiIg4ODhgX10nJydEQ0JgtNn23ZSxsbG2QyxDGRAlDgkeHR0xIx5VVVXfn4v00nDEnRrnuR/zzVv9gWv+rJ/9koD+o5TmVTiJYlVJNC5Zl7UnQlA2W26y3fmSz/EdMjyreResiRfyyUjxxDJ6NiOYQyvIUzb/vrRdQjrHjnwzEw0lGheWa149haJFmLgRHSNHeZE/LAjFixpUQwvZrR0vIQabbhVHOQpvTg/Ulhx5YRB/Lx9pFwDreWV3VEp2kp5onrUkU2UQIysgFwRWPQxiTw2NYxOEahKVdxT11n8lHQWmhBZQFgedgHz/6OR2pscqAAAXd0lEQVR4nO2diVcUx/bHGWAQcMg4MAvKNj0GcAEcRhCGRRQEJWpAY1yiPhE10cQsL77nkkXjy/v9/u7XdWuvur3M0tPknXdzTo4MTXV9+t6639q6pq3tf/Y/C2cjE2uL5c3iSrVaXSlulhfXJkbirlLzrDC+eDqB2enRY4W4K9e4TYxWUTpu1dGJvzLlyOKsLx615cWJuCtap00ZsenMVldWisXiykp11jHidS3uytZuw4saW3Ep06dbZqmocY7+tYJ1eFSh2ywTonbTyIflTYVycTjuaoe3SZlIiO8sOBUzsyRT0WTcFQ9p4xvcfUV/PAG5yR25MR535UPY8BJPkUsh8Djk0jL7q6UD3xzHa+czGI/FjeBv7Sw+a+NjjCxWM3FD+NgwSxor7bXyAWP7CktPBzapTrB0Ua6HDxjLLEkd0E7OWiMONNx4IPs4UywZ1s8HjEsHVhqpym9kGgN0ETM0UkfjBjKNAs42EKECsb16EL1IQ7TaOB8w0kHJVNxQqh2DKp1uDqBAPEDaP9FcQBdx5WCJxrDTxBBliNAWnYMi/UXoiDYT0EWE+Y9i3GjUYDS/0VQ+YiAai3HDEaOjibp7al7WV4ZyD8KA0WlCTwZFhN6NEzceGy81MY0qiKAZ7XEDglA4UQC6iM5BkIzTkTRCRghN8XS8gGuRxSggrsQ/koIYzUQE2N6egTiNExBGFJtRudB14mbcowzyiJ3I+NpZsolcMQrjx47hwjsVsQu5E9FxVGF8bW28GbOrw7RvkWhHCqtGpxQCkTixilQrQ6tVbrhzzmd4MWEaj9yF3IlWCE3IajXYrzuWUMxceS9Hm0ipQTotG3ceUavV0EB5XC0psaz/shCpFnKjfTejidDJqv31hhEp4P6FnfmzCVt7pyLszihWtnMN9DNmSqnUzsXGEGmIXiylkqnUBWhz2q/JwHdDBezry5TLmXZ0PbR+6yMOK2p3Jm1zP5VMJlPJE40gUsD9EikqmSJPa1kNFgjSomTpyxQheDZmV5bKdE27OYRFM0wLZJnqAlQrmWzAi+MqYDJF4lSbN4EHUJYV4euG1Jzllc1yc9xZNhFgXmie1at+RBmitKRXxD3qk4Qbi/rTJ22aM+tyZjKNgfaZ2bRAYuUMq1iy3kA1AZPkxxX1ilk1kxoe1G1j9vRmuX6HQjadVW9NhhzrycYQtTboAqZmyM/qWgJIkpB7OghIVB4/ruze8OB043apnvZJRV8VY9jpcSIprI5AHTc9CIBac4dLMlolbnSkXcun89OP53ZvPMFBgbM2f0IHTe26QJKTiHVkVCtEKaAmh2QOUQwrYHbzyXS6gxmAbrmce5dQTKdK2mdoThIg2rzimo5Yc6CagDREjfUu0vBmRZCS3+/mOzQDh05vbVV293B/QvsMEbcwAb6k3X2UIdbXFvE2aE7OkruuaIRz6Q7ECGe6Y3rLs30SXVnydSdMZhjjC45YT1v0CFFjxRKawqZG+BglFKD5PG2feNwmqH7ihNDKja7ppI5YQ1v0CFFzen2YfLgUnlC2z46tLa/2ubFSxjxJ59zMgaDlRYoYOG/lEaLWmjMM0GSPxnF/2gomVNonids9x4KcxbryQGgNTz0CNQAxXIjyCzPyKc/eCOFCM27dBkriVuc8bceqJRcoYqhADQ0IQydt9JuvEVByuu1Ti1vHciP0J5DJGqMthghUAzDpFaKscJUwkw+m8efs2JrbY4zmOg9sz8DmFD1EwxMxnExIwo2mETLM9NYejuhFWKNohA9RVrS6KpqpM0oNyPwcbZRGoG541qMW0agJ0CAkmQYX/FotPw3t0ZjgWvavSLi2GKqr5ulD8pDDqoW/pSmivu/BhzB0WwyrgzhhWMUPh/jEaoreUYp5EW2LtYWo7cMqGVogtQ0DbV6UfkxuvRGaMFRbNMeDQR60CDPFXTtI09NzISI3vTU3rV+Vf2060Z/QK1CVPsJwjSFqE2K5ND3tXlMJUpF8xb3KQCR/KIdmwYRegSq7su01hihKaDuH1P1SoA9JYqkYTtwl98+EJ/TowMkd45oHk2EAwxCCdy4ZrTNttjpInYan01tGmAYSeniR/xbGCRdCdNW8Cfsy0xYiRpiee23oJkZIHXu6FkKOKChgkp6PRyCR7nD4Hbg0aGXZUPwlJ7FrNkQkStNzCWsuAInSjnw/aYh6lAbViGZUHYOnU8ikO7wVluDKTd/SzH4p6KGVN6cd0ztQ8379I/c5OKbQ5J8mtH5NGEKYCEiUuA81QkilZ4V/6TpTsWZCq9tmqwVCiKgF87VMNZ5jC8XonPsZnUJMssKKyryB6O9FffTkNRNlphWMEOsW1E5oAs4n1EzDdmmbiL5enApFaBpKiBhG6LvtGwdUHspKzYitJXQCCHFAdQJyeLlWxLWWE/rMTeCAjrbvgPbbakBc06sQKyEOaG6sGN6oDXG8pYTkJ89dJeEAeaA6ousWkFEnWk7otc80TIiqXuSKGeRFfUYYqmB2TBohrGiE+IxwbR4ERPcX/xhLmoi4F4d1QtJQAgdK4QmhS+vohPj2rloA29oKa+NtC6csRNSLlFD0jYn/XzfRh2T4JLu93oS1AVK7eiqVCpFu9JUZWOELG31ho3lW3ySAEYZvg6r989XMTjBigcSlWF2DzQQ3AivuWuV1JcxlZK1RTLfB6pqD7I2sx4NtdOmzFBioBW2FlK7wIVNRlqVDzRzDNIbYjQQ7Wao2YZ2AsMdi3hQNG7GoEUJLac6EaYc1xoc1YLwGtYdoG32/QGqGJ+KSGkeh5SIkYUXL1Mg6fv0edK3QlxlZGAhEJEzLItv1kf7Cnkeq8YrMvFfEpvu1VApT3uY5BPUDUlsYSAUEKpnGkJvY6ZsRHvWd23uNNdHpXa+1jnRCCxBYYTamaRoFdEVj/qyZUXXph8kdSQgJHa0wNKo9ZJRLHIWuBNBJb2WqjfyoT9LX3QZ1F5nd8D71AmMhH2qBhiltVFYWotkEbbqghsp0qd1pyzTsQbovz0JUSwDJl9vY6WZla8JFoFhOTO95pl9jytsW/JEmALKZKwNRa+2k+ReNajxFgw5YjF4r9DwTN1AXVvQgBTnU9phnGg5R8pjM8SKZJ9b2Ja1oD5puVsbWn5gTdcQ8DI88FuTIDKryGgeIRVG9NfngRIOA1qgf5h831FCB13+VemwinmKIsAyR2O3gPPmOp/DJa/RqgF9RSiY/q5sJYI8wd2F9ISrLkbuNyUSx3y5oKvoO5hMWpwmnMg2baKYrtGiPjuwlPc/Qgq1d0IywAUAjUKEkLUpH9NbC9kE/xVWf79q71L/bzzfOXMLyEku9qguXLAISpTOphkKUMUgvplJkuUp/dYX8Tn2hhKZwvNrT/QnT9tAraSJVXUg7E9qdQT4uuKO8hjxIjLXFM6nUDixI6ZNB5Nmqa9HUiR5dN9q6FKvgK+BUC4tqsSSU9F4pXbJ+NT//qkFA0RaZGZ3fKaMhsjeT53DEfEdF7qN98tRejKNXwYPQ3odD3plp0/fNN3QS6siyLGjWGKHpe9lFi/EcROU7tir9e3t7/ZWtDq8uNxWWJatQA6KgnKlZbxvkNrzCS9q0hqDkNtq+F3peByrjFIBs08t7Dik6WB61y5w1b10QXmzCwWBr0B9bQSZk+4ycwF9KCDFh4+FlUJUNvUjyUZ9983Fo9dUmveg9ggfChBlRPE7RzluwpWGXib6njZaIz5WOjER9BCG8YaVvz2IvB4WYOkU8SLs++kupEKTLsR2mmLHClDXFehDpPiFNKHiQxnc2xgRSJXp0Ts2Bmu6gPTvjnVTa243xaAwixht6neisiptuvBQBB9y6hAFSuV8OrkhkNmnlmna2Ju12O7dCR2qaDaZsQJD7OM9UgPdKZk0nMi96dcwsy0+zzc9FsyTaqmM9tBWecdkkZOetJZ7MhQhVPljEDiqixccJSHON/cY6TRAkVOc6/GM1LbqryKGgdFgR8xE8RVswaAPixyVfqkx79tLS+ekKHy1ih4KCVBTjBaQDGfTYAflicP9je0sifDInRo3oqa7UhbGf9lXFnbj45u3NdwkJWdmaJhMYzPLkdT05KHaeH3r7dhF/GQg59aPFdgxx4uKbm4eIfa0wJpwb/buVubnHc3OV3X7tXadbh6i9faN32MCFB+B4yGUjnfa9OSTt61uJAHP9p9jbRcOF1rgpBoO9Q3K99u0hw5594YP3xTPzcsFItTD+A4VH2AneVMtsPnDks3e/IHi/vLPwFEZ2qmAiE++3tUyIoTb0Tt+gNWaUt97d+YZd/M2dd7eefe198Zt2tiJJH158gjiunhThDut0B66udnZ2rnpjyAvJdfqFb2WfgRg2wdACOya+teEO/F8DBDxq/pDyOu3Ct+1KyaTBtjylFqbEbJebLCBhvkOrTeuOU66a1ymQoDPvVmWa2phsZQe8MMr7ZIlb0Jzgn7xhWfVmlKsaHH4VZ/waSoR/Cb1xWvZFLcN9ooHcWs1mSTWekx+e+fDVYFDKM1IgKGVndlVqansrDhYeyYhn+nw1y5+6G0zfgA8b5eOIbgv8gj+w7OpznoUT5cjFQ3wF0DeUj9fo+a1mAfICaV+HfpLtfC4UNeKjhdu5/551ZvUaNSdEwZQGKz7Ldt7kfox05o0dUHfnZjaL1ag5gB4FZrM3WWKNUjlA4r8QfNlPb6s1ahagUeDtTw3GoDeWGjBYT7wl/dd9/Hg3u71n+q+XkZf3KbkJ/zSbhbwaXUYFwkMC8Pbx7u5uwRiJuXzkHrcF4moLCJ/phO79v4wIL0v5NMKb0RLCUowj0wyrwfGsRxUb4/uS84kocRuik4h2oWbRTKWUMQK+2192d9t8dyJXRNjdDd0ZIYe3u7tv00f+5W20rvXxHed8vNBs5zN2841Iu6fiaFRHdGmYuZU53iRGyScKdDtuDr91xP22YdEtTWiM2ePdTUqsPL148GWi73wbQwteMSstNMzHuxXq4KIFfMSU4aHs33SK1CfqVgffcf6cuAK5ozMx6eostm4QrA7xb3Ya4kHqV0+DxOSh86YY5C+3dJDfpk3TPDMF0rWaGf3kgfCtxbCKOC42E2niYeWJcHyYPIhx7+m45vbldKmSWBVnhGUMkIcYJ0zVOQ2SWL0Dzs9weRDlluP+kpLhUUdh5BleBl0Qoy0P2tzTAfiS4MKkINTE49NQ4oHKg7qUE/tXPY/0JXTDxQNnDJAHZrEuzYyUeTV+ff9CiofFiIpHgDy8eP9r7C1xQiyeOD8cPnn4rmD8JoR4BMjDi7ukRMEYy9LMuPhu+B/vnjx5+PDhkye//U2EVoB4IODZTpk+f/uWlXj3R/7RbKsVcU30aL67ksttk/qQKv39J1FLH/FAgleVh5++5cVt53JXvhOMUy1MOpOiV/q7y9flmmR8rzJK8RApJRsgDz/9XfCRgl3G3/mvNlqUWAujojY/v6R8YLxihyUjJh7dvvLw/jAvRpSby70UjIm+6OWxIOTB+fBysEszwfjD95IRSaxe8vD9DzYf2ODLDw6/KOoR4gi/069/bBt8EKyc8a6feGh8Uh7ucr5tu+DB7T8EY6T6WGBDX+fPrpxdDY3xWw/xOK7Jwy+h+CBYu/7kzTHK1khnE1/cy3nwqYwe4vGpjzx48wFj7h6N/ghnE+FVlV8l3/me859hjLw1fYuJByIPevo07LPz5y5LRhKr5ss7TTSY1b8n2t/loZ6eoXO+jKpAHhKJVZtceu/Pd25oqGfoK/7jIIRqxOsWL0WEfnQJXcYejNFHPILkQbHL5+gtuBO7cldaQPizCNKveuD+PUP3sdph4nHnZjh5ALt/mZffw2+Qy4E0RphqYIX0uyuc8f5HqIMMIsMw8bgVTh5yrGzC9/E+56N9uAhXSPkq94/3Bjmj+5yHzrF/IwlWiofoQzP7MSzfZc43eI+VEelAgw8If70nBPEz2kguDw2dx3yJiUeQPHx1fkjwceaue/9if4u8yNZME502s1MD4eovHiKxBskDxVPytNulEWPFyL/IekKM67WO6f0ho1I44/vfXvwWKA+0JPm4Brc/CL6WzGkoy08/v1TEkTNexjo8HOrk4ZMh5KFHCfnB7Z/F/Vqy64tYQeyMEgNENDlgjIdDycN5lrbUoVPrdu4B46RYfvruSpfN+NEnsYaRB84nh7+zrV6YaSusCcYfRU9V9cJXGONJYmHlT8gDWZhpMR41ORn1LzmaQlpSsOHyILpC1fheupATiok/thljjmdDj8RqG/Su9T/IKSPeYrwLF5h45D47b1XZl8+Sv5d/xD8dLE1MbKjigYQdbpg8vJTy0OiBCU2wwmRCNVQ8PuJjj0B5AIt58Wl4MWGah3jYeKg8dF353SqxPT4/KsujMw8frEvx6AoWj9xX5xH5k/Kw/uDhjCg9prao5NGZT466/70SjN//KUbJSjdTYcxh8pCT8rD+AEp8IO4QQz6VWrh/ZudvnxA7evThRVElTTzMxKqmT37Z9p/ib/cfHj0KJf5t58I+/7DFmrgm+E5cSKZSScl4gv8CF4/LbgBLPjl6UCa1L0q+JDknSZRYbd2GE7kwMzPPD5BkjJ8ojKh4nPvoLw8nFD56mFdqXjTI1rwZpCzMzOzIAzKTqRJn/ESmiN9fGlM6PT0mnyYPpEFTvpJSMjulCiz6jV9T4l6vVD7KOM8ZZWJFxEPrXXfJBcJ1lI8xvhL39f2OhMZN6Ls8+zOI0RIPVf5UeeB88yWs6J2zvKUGfOFMYzbBbnKmRP03NmZWJIkwGuIh5eHPFwhf0uSjN0mlSmcYY5TKARK4f4GF51jy6sKAxZjaOeonHkISt/8QvxXycHTH5htYuCqKpuIR4XwpHGUyIw80f3TkyKOrAwNJ0zCB/KBNzQ1ufxC/0eTBKGlg4Cq5ibgj/aqmiFdmxIGfY1eP9Pb2Eka72fiLhyEPn2jyYPKRe1zlkUKPEYx43cIgdO9/zYzUpKd4DOa6coO4PCB81x+xO7SMEJaA14VKjH3eCzU4smATaowPeBp0xWNbyoPzwEse3LJPla73Mr7ezwd4kO6Q9BXlIjB9/VD0ZE4tUEb2yK2kU5o/aiVWYX7yMMZLBj72fQ2idxPltP4wbzyMEWrSS2JobOGaWxM/8dj34rPT56mFayofUwvRQ410TMwF0ZUMVrEB6rsBN+UduYaIR1KKh2QMkIdrRzjf9bEB5j85yoh4IDUizlFY57IP1VqAnOcm1jErs6ZM8fCVhzEiD5Tv0XWqRK7YS77N6Ef8cnP3+lmFsVdUy5vRFY+HDx76ycMYT5+94mG5fGdFK27Rlm+5rTQhGMcWrEevMYrEejSUPMiehMsn7hb9q+rClDeD+BBDTw8lO+lwxjDycE2kF2VQ0YI9bRqj3MA+oyZWMwVqjFw8guWBp08xU7Mx2vpZRWX5SREP2w8qY7K0s7NTqlkeWnzsh2Jr4pSci3y8MZAUjEeuXbUYMSN8Uh6SQh4u8sJjWniiJg/hWb/Ako7MF72oeBiGyQP5olSRPotxH9iGiAdUmjNyp/jw2Y8jJfJnrG8EcZPi4Zwt8Y7O1WtHfASS82HyAIH7b1pgzMdgSRvmB4J4iofVmyO9s5TSZEV6cdOQ+7dwpHBf3O/LqDYsXysNJx4evy09WH81sPCora2vGFf69LTCFCYen+PigcoDcSHR9/+LG8Xb5N4FKR5IJOp811NMHuDyfyTiPpE1wKR4OEI8ThnioWfaU7x3XXLBB66TCeeDkD19TBGPM0IgVcVLqcBidHRmPbG/8/n/u38/eVDSp7cFiIfS45GjB5B383vHDrB5iAdjNOVBjB4OdPszrRBy5KEunUU7/dJ8K0wtm4zJUyWX8QjOF9vooRHDxePa9ZI9enDiP4i1PpNnEqzDYjiIB0ufSTl6iO08gWaYFA9Hmbai8sBsM+7RUaOmnLPIV1VdeRBfG3QAtq01bsa0lTq51KLjZqI3VTzOiPTZ2l3NUZtyoM1fWR78bU1lXI54R0VMJnaKVf/q6dPbJsrVjWr5v5cP7L+u9cVv/wFmE83x9pAoWQAAAABJRU5ErkJggg==">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>FullStack Developer</title>
+
+</head>
+
+<body>
+ <!--navbar-->
+ <nav class="navbar navbar-expand-lg navbar-dark ">
+  <div class="container-fluid">
+  
+      <a class='navbar-brand' href='/'>
+        <img src="./MEDIA/—Pngtree—girls work in office vector_9269401.png" width="100" height="74" class="d-inline-block align-text-top">
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home"><h5>Home</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#about"><h5>About</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#projects"><h5>Projects</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#skills"><h5>Skills</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#contact" tabindex="-1" aria-disabled="true"><h5>Contact</h5></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--HOME-->
+<sectio id="home">
+  <div class="home_container_video">
+    <video  class="vid"width =100% heigt=500px controls loop autoplay muted>
+      <source src="./MEDIA/black_-_13495 (540p).mp4" type="video/mp4">
+    </video>
+    
+  <div class="home_container">
+   
+    <div class="home_text">
+    <h1>Hi,<br>I'm <SPAN class="text-danger">ANJANA</SPAN>
+    <br><SPAN class="text-danger">FULL</SPAN>STACK DEVELOPER
+    </h1>
+    <div class="contact">
+      <a href="#contact"><h5>Contact</h5></a>
+    </div>
+   </div>
+   <div class="home_image">
+   <img src="./MEDIA/profile.png" >
+   </div>
+
+  </div>
+
+  </div>
+</section>
+<!--About-->
+
+
+<!--About-->
+<section id="about">
+ 
+  <h1 class="about_title">About Me</h1>
+  <div class="row1 d-flex">
+
+<div class=" ac1 ms-5"><img  class="about_image" src="./MEDIA/1 (1).jpg" alt="..." height="450px" width="400px"></div>
+<div class="ac2 mt-1">
+  <h5 class="about_head">ME(A)RN STACK DEVELOPER</h5>
+  <p class="about_text">I am a seasoned MEARN Stack developer, driven by a profound passion for crafting dynamic web applications. My journey in web development has been marked by an unwavering commitment to producing top-tier code and an acute attention to detail. I'm on a mission to create web solutions that not only satisfy but consistently surpass the expectations of my clients.</p>    
+</div>
+</div> 
+</section>
+
+
+
+
+<!--SKILLS-->
+<section id="skills">
+<h1 class="skill_title">SKILLS</h1>
+<div class="container_skills d-flex" >
+
+  <TABLE class="skill_table">
+    <TR>
+      <TD><img src="./html5-logo-31813.png" width="80px" height="60px"></TD>
+      <TD><img src="./MEDIA/html5-logo-31821.png" width="80px" height="60px"></TD>
+      <TD><img src="./MEDIA/js.png" ></TD>
+    </TR>
+    <TR>
+      <TD><img src="./MEDIA/MONGO.png" width="80px" height="60px"></TD>
+      <TD><img src="./MEDIA/REACT.png" width="80px" height="60px"></TD>
+      <TD><img src="./MEDIA/angular.png" ></TD>
+    </TR>
+    <TR>
+      <TD></TD>
+      <TD></TD>
+    </TR>
+  </TABLE>
+</div>
+</section>
+</body>
+<!--PROJECTS-->
+<section id="projects">
+  <h1 class="project_title">RECENT PROJECTS</h1>
+ 
+    <div class="row1 d-flex ">
+   
+    
+    <div class="card" style="width: 18rem;">
+      <img src="./Snip - Start Here - Google Chrome (2).png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Travel Blog</h5>
+        <p class="card-text">
+        A travel blog static website created with HTML5 CSS & Bootstap5</p>
+        
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">VIEW MORE</a>
+    
+      </div>
+    </div>
+        
+    
+    <!-- Modal1 -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">TRAVEL BLOG</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+        
+            <video  width =100% heigt=100% controls loop autoplay muted>
+              <source src="./MEDIA/TRAVEL BLOG.mp4" type="video/mp4">
+            </video>
+          
+            <p class="card-text">
+              A travel blog static website created with HTML5 CSS & Bootstap5.It includes an attaractive carousel and differnt cards and attarctive hovers</p>
+          </div>
+          <div class="modal-footer1">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button"><a href="https://github.com/ANJANA-MANI/TRAVEL-BLOG" target="_blank">Git hub</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <div class="card" style="width: 18rem;">
+      <img src="./MEDIA/PORTFOLIO.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Musk's Portfolio</h5>
+        <p class="card-text align-text-center">
+        Sample portfolio of Elon musk which breifly explain his projects and services <br>Tools used: HTML5 ,CSS </p>
+        
+        <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">VIEW MORE</a>
+    
+      </div>
+    </div>
+        
+    
+    <!-- Modal2 -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">TRAVEL BLOG</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+        
+            <video  width =100% heigt=100% controls loop autoplay muted>
+              <source src="./MEDIA/PORTFOLIO.mp4" type="video/mp4">
+            </video>
+          
+            <p class="card-text">
+              Portfolio of Elon Musk created with html5 and css  which breifly explain his projects and services</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info" data-bs-dismiss="modal"><a href="https://github.com/ANJANA-MANI/DEMO-_PORTFOLIO.git">Git hub</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="card" style="width: 18rem;">
+      <img src="./MEDIA/Snip - Food - Google Chrome.png"class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Food Gallery</h5>
+        <p class="card-text">
+        Static website which displays different types of biriyanis<br>
+        Tools used:HTML5,CSS</p>
+        
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">VIEW MORE</a>
+    
+      </div>
+    </div>
+        
+    
+    <!-- Modal3 -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">FOOD GALLERY</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+        
+            <video  width =100% heigt=100% controls loop autoplay muted>
+              <source src="./MEDIA/BIRIYANI HUT.mp4" type="video/mp4">
+            </video>
+          
+            <p class="card-text">
+              Static website which displays different types of biriyanis<br>
+              Tools used:HTML5,CSS
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info" data-bs-dismiss="modal"><a href="https://github.com/ANJANA-MANI/FOOD_GALLERY.git">Git hub</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    <div class="row1 d-flex ">
+    
+      <div class="card" style="width: 18rem;">
+        <img src="./MEDIA/Snip - COFFEE - Google Chrome.png"class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">BREW BEANS</h5>
+          <p class="card-text">
+          Static website which displays different types of COFFE<br>
+          Tools used:HTML5,CSS</p>
+          
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">VIEW MORE</a>
+      
+        </div>
+      </div>
+          
+      
+      <!-- Modal4 -->
+      <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">BREW BEANS</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+          
+              <video  width =100% heigt=100% controls loop autoplay muted>
+                <source src="./MEDIA/COFFE.mp4" type="video/mp4">
+              </video>
+            
+              <p class="card-text">
+                Static website which displays different types of biriyanis<br>
+                Tools used:HTML5,CSS
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-info" data-bs-dismiss="modal"><a href="https://github.com/ANJANA-MANI/BREWBEAN.git">Git hub</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card" style="width: 18rem;">
+        <img src="./MEDIA/Snip - Kerala's No.1 Software Training Institute in Kochi (Cochin) Luminar.png"class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">LUMINAR CLONE</h5>
+          <p class="card-text">
+          Static webite which is a clone of Luminar's home page <br>
+          Tools used:HTML5,CSS</p>
+          
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">VIEW MORE</a>
+      
+        </div>
+      </div>
+          
+      
+      <!-- Modal5 -->
+      <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">LUMINAR CLONE</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+          
+              <video  width =100% heigt=100% controls loop autoplay muted>
+                <source src="./MEDIA/luminar.mp4" type="video/mp4">
+              </video>
+            
+              <p class="card-text">
+                Cloned luminar's home page .It includes carousels,hovers,cards
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-info" data-bs-dismiss="modal"><a href="https://github.com/ANJANA-MANI/LUMINAR_CLONE.git">Git hub</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="card" style="width: 18rem;">
+        <img src="./MEDIA/Snip - Document - Google Chrome.png"class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">L.I.V.E</h5>
+          <p class="card-text">
+          Static website which displays different services<br>
+          Tools used:HTML5,CSS</p>
+          
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal6">VIEW MORE</a>
+      
+        </div>
+      </div>
+          
+      
+      <!-- Modal6 -->
+      <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabe6">L.V.I.E</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+          
+              <video  width =100% heigt=100% controls loop autoplay muted>
+                <source src="./MEDIA/L.I.V.E.mp4" type="video/mp4">
+              </video>
+            
+              <p class="card-text">
+                A Static website which consists of grid,card,modal etc.. ,developed as a part of examination<br>
+                Tools used:HTML5,CSS
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" ><a href="https://github.com/ANJANA-MANI/WEB-TASK.git">Git hub</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+</section>
+<!--contact-->
+<section id="contact">
+  <!--Section: Contact v.2-->
+<div class="contact_container d-flex ">
+
+<section class=" w-50 ">
+  <div class="gallery">
+    <img src="./MEDIA/1 (1).jpg" alt="a wolf">
+    <img src="./MEDIA/1 (2).jpg" alt="a lioness">
+  </div>
+</section>
+<section class="mb-4 w-50 m-5">
+
+  <!--Section heading-->
+  <h2 class="contact_title">Contact Me</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+      a matter of hours to help you.</p>
+
+  <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="name" name="name" class="form-control">
+                          <label for="name" class="">Your name</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="email" name="email" class="form-control">
+                          <label for="email" class="">Your email</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <input type="text" id="subject" name="subject" class="form-control">
+                          <label for="subject" class="">Subject</label>
+                      </div>
+                  </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-12">
+
+                      <div class="md-form">
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          <label for="message">Your message</label>
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
+          <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                  <p>Kerala,Kottayam</p>
+              </li>
+
+              <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                  <p>8138923730</p>
+              </li>
+
+              <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                  <p>anjanajmani333@gmail.com</p>
+              </li>
+          </ul>
+      </div>
+      <!--Grid column-->
+
+  </div>
+  </section>
+</div>
+</section>
+<!--Section: Contact v.2-->
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="https://www.linkedin.com/in/anjana-j-mani-b41306174/"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="https://github.com/ANJANA-MANI"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+   
+    <a class="text-white" href="https://mdbootstrap.com/">ANJANA J MANI</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</body>
+</html>
